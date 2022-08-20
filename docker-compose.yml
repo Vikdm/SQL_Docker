@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mysqldb:
+    image: mysql:latest
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./sql:/SQL_Docker/schema:ro
+    environment:
+      - MYSQL_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=schema
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=passw0rd
+
