@@ -7,8 +7,9 @@ services:
     volumes:
       - ./schema:/docker-entrypoint-initdb.d:ro
     environment:
+      - MYSQL_URL=jdbc:mysql://localhost:3306/app
       - MYSQL_ROOT_PASSWORD=yes
       - MYSQL_DATABASE=app
-      - MYSQL_USER=vasya
-      - MYSQL_PASSWORD=qwerty123
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=pass
 
