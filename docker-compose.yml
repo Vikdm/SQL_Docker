@@ -1,15 +1,14 @@
 version: '3'
 services:
   mysqldb:
-    image: mysql:latest
+    image: mysql:8.0
     ports:
       - '3306:3306'
     volumes:
-      - ./data:/var/lib/mysql
-      - ./sql:/SQL_Docker/schema:ro
+      - ./schema:/docker-entrypoint-initdb.d:ro
     environment:
       - MYSQL_ROOT_PASSWORD=yes
-      - MYSQL_DATABASE=schema
-      - MYSQL_USER=admin
-      - MYSQL_PASSWORD=passw0rd
+      - MYSQL_DATABASE=app
+      - MYSQL_USER=vasya
+      - MYSQL_PASSWORD=qwerty123
 
